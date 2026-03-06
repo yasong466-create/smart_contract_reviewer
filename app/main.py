@@ -2,22 +2,22 @@ import streamlit as st
 import sys
 import os
 
-# --- 核心修复：强制注入路径 ---
-# 获取当前 main.py 所在的绝对路径
+# 保持这段代码不动，作为双重保险
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# 重点：将 app 目录加入搜索路径的最前面
+root_dir = os.path.dirname(current_dir)
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
 if current_dir not in sys.path:
     sys.path.insert(0, current_dir)
 
-# --- 现在导入绝对不会报错了 ---
-from components.sidebar import render_sidebar
-from main_pages.analysis_page import render_analysis_page
-from main_pages.upload_page import render_upload_page
-from main_pages.report_page import render_report_page
-from main_pages.progress_page import render_progress_page
-from main_pages.budget_monitor import render_budget_monitor
-from main_pages.price_library_manage import render_price_library
+# --- 修改后的导入语句（添加 app. 前缀） ---
+from app.components.sidebar import render_sidebar
+from app.main_pages.analysis_page import render_analysis_page
+from app.main_pages.upload_page import render_upload_page
+from app.main_pages.report_page import render_report_page
+from app.main_pages.progress_page import render_progress_page
+from app.main_pages.budget_monitor import render_budget_monitor
+from app.main_pages.price_library_manage import render_price_library
 
 st.set_page_config(
     page_title="智能合同审查系统",
