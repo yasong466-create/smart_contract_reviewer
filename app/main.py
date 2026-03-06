@@ -1,10 +1,6 @@
 import streamlit as st
-import sys
-import os
 
-sys.path.append(os.path.dirname(__file__))
-
-from components.sidebar import render_sidebar
+from app.components.sidebar import render_sidebar
 from app.main_pages.analysis_page import render_analysis_page
 from app.main_pages.upload_page import render_upload_page
 from app.main_pages.report_page import render_report_page
