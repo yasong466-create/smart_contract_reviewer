@@ -5,12 +5,12 @@ import os
 sys.path.append(os.path.dirname(__file__))
 
 from components.sidebar import render_sidebar
-from main_pages.analysis_page import render_analysis_page
-from main_pages.upload_page import render_upload_page
-from main_pages.report_page import render_report_page
-from main_pages.progress_page import render_progress_page
-from main_pages.budget_monitor import render_budget_monitor
-from main_pages.price_library_manage import render_price_library
+from app.main_pages.analysis_page import render_analysis_page
+from app.main_pages.upload_page import render_upload_page
+from app.main_pages.report_page import render_report_page
+from app.main_pages.progress_page import render_progress_page
+from app.main_pages.budget_monitor import render_budget_monitor
+from app.main_pages.price_library_manage import render_price_library
 
 st.set_page_config(
     page_title="智能合同审查系统",
